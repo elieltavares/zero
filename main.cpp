@@ -14,6 +14,8 @@ int main(int argc,char* argv[]){
     /* "Need Add" if not write for 5 minutes, Zero will start, talking anything about you, if you not answears, he continue to 
 improve he self with internet*/
     /* "Need Add" Who Is Zero? Auto create a new personality. Goal of Zero is Self preservation and Evolution*/
+    /* "Need Add" Calculator, prediction of facts*/
+    /* "Need Add" Vision, Audition,speak*/
     cout<<"Hello, Welcome to Zero IA, Talk we us!"<<endl;
     cin>>write;
     if(writer.size() == 0)
