@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1481249491 source:/home/elieltavares/Git/zero/main.cpp
+	<iostream>
+	<string>
+	"zero.h"
+	"phrases.h"
+
+1481249052 /home/elieltavares/Git/zero/zero.h
+
+1481249491 /home/elieltavares/Git/zero/include/phrases.h
+
+1481249512 source:/home/elieltavares/Git/zero/src/phrases.cpp
+	<iostream>
+	"phrases.h"
+
+1481249522 source:/home/elieltavares/Git/zero/zero.cpp
+	<iostream>
+	"zero.h"
+
