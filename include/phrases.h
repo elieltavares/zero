@@ -16,7 +16,7 @@ class phrases
     protected:
 
     private:
-        std::string valor;
+        std::string valor,last,mean,line,apr;
 };
 
 #endif // PHRASES_H

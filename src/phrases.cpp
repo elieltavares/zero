@@ -1,5 +1,8 @@
 #include <iostream>
+#include <fstream>
+//#include <ofstream>
 #include "phrases.h"
+
 
 phrases::phrases()
 {
@@ -16,17 +19,40 @@ void phrases::salute()
 }
 std::string phrases::exist()
 {
-    return "carro";
+    std::ifstream myfile ("phrases.txt");
+    if (myfile.is_open())
+    {
+        while ( getline (myfile,line) )
+        {
+            apr.append(line+"\n");
+        }
+        myfile.close();
+    }
+    return apr;
 }
 void phrases::addphrase(std::string add)
 {
-    valor = add;
+    last = add;
+    valor = add+"\n";
+    std::ofstream myfile ("phrases.txt",std::ios::app);
+    if (myfile.is_open())
+    {
+        myfile << valor;
+        myfile.close();
+    }
+
 }
 std::string phrases::lastphrase()
 {
-    return valor;
+    return last;
 }
 void phrases::meaning(std::string sig)
 {
-    std::cout << valor << " meaning "<<sig<<std::endl;
+    mean = sig+"\n";
+    std::ofstream myfile ("mean.txt",std::ios::app);
+    if (myfile.is_open())
+    {
+        myfile << mean;
+        myfile.close();
+    }
 }

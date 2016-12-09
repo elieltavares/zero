@@ -2,80 +2,81 @@
 #include <string>
 #include "zero.h"
 #include "phrases.h"
+#include <sstream>
 
 using namespace std;
 
-bool life = true;
-string write;
-string ask;
+//Global Variables
+bool life = true,test = false;
+int number = 0;
+string write,ask,line;
+
+//Classes
+zero zero;
+phrases phrases;
 
 int main(int argc,char* argv[]){
 
-    zero zero;
-    phrases phrases;
+    while(life){     //start the Zero Life
+        /* "Need Add" if not write for 5 minutes, Zero will start, talking anything about you, if you not answears, he continue to
+    improve he self with internet*/
+        /* "Need Add" Who Is Zero? Auto create a new personality. Goal of Zero is Self preservation and Evolution*/
+        /* "Need Add" Calculator, prediction of facts*/
+        /* "Need Add" Vision, Audition,speak*/
+        int heal = 0;
+        string nar;
+        nar = phrases.exist();
+
+        istringstream f(nar);
+        string line;
 
 
+        if(number == 0)
+            cout<<"Hello, Welcome to Zero IA, Talk we us!"<<endl;
+        cout<<"Talk we us!"<<endl;
+        ++number;
+        cin>>write;
 
-  while(life)   //start the Zero Life
-  {
-    /* "Need Add" if not write for 5 minutes, Zero will start, talking anything about you, if you not answears, he continue to
-improve he self with internet*/
-    /* "Need Add" Who Is Zero? Auto create a new personality. Goal of Zero is Self preservation and Evolution*/
-    /* "Need Add" Calculator, prediction of facts*/
-    /* "Need Add" Vision, Audition,speak*/
-    cout<<"Hello, Welcome to Zero IA, Talk we us!"<<endl;
-    cin>>write;
-    if(write.size() == 0)
-    {
-      cout<< "Please Write, anything"<<endl;
-      zero.name(); //need create Classes
+        if(write == "quit" || write == "exit"){      //exit of program
+            life = false;
+            return 0;
+        }
+        if(write.size() >= 0){
+          cout<< "Please Write, anything"<<endl;
+          zero.name(); //need create Classes
+        }
+        else{
+            while (getline(f, line)){
+                if(line == write){ //need create Classes if(phrases.exist() == write)
+                    cout << "Ja existe"<<endl;
+                    test = true;
+                    heal = 1;
+                }
+                else{
+                    if(heal == 0){
+                        test = false;
+                    }
+                }
+            }
+            if(!test){
+                phrases.addphrase(write); //need create Classes
+                //cout << zero.name() << zero.ask(phrases.lastphrase()) <<endl; //need create Classes
+                zero.name();
+                cout << " ";
+                zero.ask(phrases.lastphrase());
+
+                cin>>ask;
+                //cout << zero.name() << phrases.meaning(ask)<<endl; //need create Classes
+                /*zero.name();
+                cout << " ";*/
+                phrases.meaning(ask);
+            }
+            else{
+                  cout <<" Erro"<< endl;
+            }
+        }
     }
-    else
-    {
-      if(phrases.exist() == write) //need create Classes if(phrases.exist() == write)
-      {
-
-      }
-      else
-      {
-        phrases.addphrase(write); //need create Classes
-        //cout << zero.name() << zero.ask(phrases.lastphrase()) <<endl; //need create Classes
-        zero.name();
-        cout << " ";
-        zero.ask(phrases.lastphrase());
-
-        cin>>ask;
-        //cout << zero.name() << phrases.meaning(ask)<<endl; //need create Classes
-        zero.name();
-        cout << " ";
-        phrases.meaning(ask);
-      }
-    }
-    /*
-    if(!law_for_surviver())
-    {
-      life = false;
-    }
-    */
-  }
-  return 0;
+    return 0;
 }
-/*
-int Fear(){
-  return all_unknown; //need create all_unknown
-}
-int get_news(){
-  return last_internet_news;  //need create last_internet_news
-}
-int remember(){
-  return nameorfacts;  //need create nameorfacts
-}
-int law_for_surviver(){  //need create Self_programming and others things
-  Fear();
-  Evolution();
-  Preservation();
-  return Self_programming;
-}
-*/
 
 

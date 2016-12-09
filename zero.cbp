@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="/home/elieltavares/Git/zero/" />
+					<Add directory="/home/elieltavares/Git/zero/include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="/home/elieltavares/Git/zero/" />
+					<Add directory="/home/elieltavares/Git/zero/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -31,6 +35,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/phrases.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/phrases.cpp" />
+		<Unit filename="zero.cpp" />
+		<Unit filename="zero.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />
